@@ -1,0 +1,14 @@
+{
+  "eventId": "live_evt_demo_001",
+  "eventType": "creator.live.started",
+  "occurredAt": "2026-08-30T12:00:00Z",
+  "creatorId": "demo_creator",
+  "stream": {
+    "streamId": "stream_demo_001",
+    "title": "Building Creator Duty Live",
+    "url": "https://demo.invalid/live/creator-duty",
+    "sourceClipId": "clip_demo_001",
+    "transcriptId": "transcript_demo_001"
+  },
+  "preauthorizationProfileId": "taskmaster_demo_v1"
+}

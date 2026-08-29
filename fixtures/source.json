@@ -1,0 +1,40 @@
+{
+  "sourceClipId": "clip_demo_001",
+  "transcriptId": "transcript_demo_001",
+  "durationSeconds": 96,
+  "transcript": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 18,
+      "text": "Today I am building Creator Duty live because creators should be present with their audience, not tab-switching through an operations checklist."
+    },
+    {
+      "startSeconds": 18,
+      "endSeconds": 38,
+      "text": "The agent sees the livestream event, plans the campaign, makes a vertical promo, and writes a version for each channel without waiting for another prompt."
+    },
+    {
+      "startSeconds": 38,
+      "endSeconds": 58,
+      "text": "The interesting part is not writing copy. It is safe action: deterministic policy, immutable releases, idempotency, receipts, and recovering one failed destination without duplicating the others."
+    },
+    {
+      "startSeconds": 58,
+      "endSeconds": 78,
+      "text": "Pub/Sub delivers the event, Cloud Run owns the workflow, Gemini makes bounded campaign choices, and Firestore preserves every checkpoint."
+    },
+    {
+      "startSeconds": 78,
+      "endSeconds": 96,
+      "text": "I can stay live because Creator Duty handles the campaign. That is the product promise and the operational result."
+    }
+  ],
+  "audienceQuestions": [
+    "How do you stop duplicate posts?",
+    "What happens if LinkedIn fails?",
+    "Does the agent need approval while you are live?",
+    "Which Google model makes the plan?",
+    "How is this different from a caption generator?",
+    "Can I connect my own publishing accounts?"
+  ]
+}

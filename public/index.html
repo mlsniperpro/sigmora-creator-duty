@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Creator Duty autonomously operates the campaign around a livestream." />
+    <title>Creator Duty by Sigmora</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <a class="brand" href="https://sigmora.org/?utm_source=creator_duty_demo&utm_medium=product&utm_campaign=all_things_agentic_2026">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>Sigmora</span>
+        <span class="brand-divider">/</span>
+        <strong>Creator Duty</strong>
+      </a>
+      <div class="system-pills">
+        <span class="pill"><i id="health-dot"></i><span id="health-label">Connecting</span></span>
+        <span class="pill" id="transport-pill">Event transport</span>
+        <span class="pill model-pill" id="model-pill">Model loading</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">AUTONOMOUS LIVESTREAM OPERATIONS</p>
+          <h1>Stay live.<br /><em>Creator Duty</em> handles the campaign.</h1>
+          <p class="hero-copy">
+            One event becomes a planned, rendered, validated, published, verified, and recoverable campaign—without a prompt or mid-run approval.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="primary" id="start-button"><span class="play-icon">▶</span> Start a fresh hero run</button>
+          <button class="secondary" id="replay-button">Replay same event</button>
+          <button class="secondary" id="end-button">End livestream + recap</button>
+          <p id="action-message" role="status">Ready for a synthetic, clearly labeled judge fixture.</p>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Run outcomes">
+        <article><span>Human actions</span><strong id="metric-actions">0</strong><small>after event delivery</small></article>
+        <article><span>Current duty</span><strong id="metric-stage">Idle</strong><small id="metric-outcome">awaiting event</small></article>
+        <article><span>Verified channels</span><strong id="metric-channels">0 / 4</strong><small>individual receipts</small></article>
+        <article><span>Duplicate posts</span><strong id="metric-duplicates">0</strong><small>after exact replay</small></article>
+        <article><span>Elapsed</span><strong id="metric-elapsed">—</strong><small>event to completion</small></article>
+      </section>
+
+      <section class="workflow-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DURABLE DUTY</p>
+            <h2>One bounded outcome, checkpoint by checkpoint</h2>
+          </div>
+          <code id="trace-id">trace: awaiting-run</code>
+        </div>
+        <ol class="workflow" id="workflow" aria-label="Campaign workflow">
+          <li data-stage="received"><b>01</b><span>Receive</span><small>transactional claim</small></li>
+          <li data-stage="planning"><b>02</b><span>Plan</span><small id="planning-provider">typed structured choice</small></li>
+          <li data-stage="producing"><b>03</b><span>Produce</span><small>vertical campaign asset</small></li>
+          <li data-stage="validating"><b>04</b><span>Validate</span><small>deterministic authority</small></li>
+          <li data-stage="publishing"><b>05</b><span>Publish</span><small>scoped sandbox tools</small></li>
+          <li data-stage="verifying"><b>06</b><span>Verify</span><small>receipts + retry</small></li>
+          <li data-stage="complete"><b>07</b><span>Complete</span><small>auditable outcome</small></li>
+        </ol>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="panel event-panel">
+          <div class="panel-title"><span class="icon-box">↯</span><div><p>OBSERVED CHANGE</p><h3>Livestream event</h3></div><span class="tag synthetic">SYNTHETIC</span></div>
+          <dl class="event-details">
+            <div><dt>Event</dt><dd id="event-id">—</dd></div>
+            <div><dt>Creator</dt><dd id="creator-id">demo_creator</dd></div>
+            <div><dt>Stream</dt><dd id="stream-id">—</dd></div>
+            <div><dt>Claim</dt><dd id="claim-status">Awaiting</dd></div>
+          </dl>
+          <p class="boundary-note">The event grants a narrow preauthorization: one creator, four sandbox destinations, one video, and an estimated model-budget limit.</p>
+        </article>
+
+        <article class="panel plan-panel">
+          <div class="panel-title"><span class="icon-box">✦</span><div><p>BOUNDED REASONING</p><h3>Campaign plan</h3></div><span class="tag" id="model-evidence">NO TRACE</span></div>
+          <blockquote id="plan-hook">The selected hook and campaign angle will appear here.</blockquote>
+          <dl class="plan-details">
+            <div><dt>Angle</dt><dd id="plan-angle">—</dd></div>
+            <div><dt>Moment</dt><dd id="plan-moment">—</dd></div>
+            <div><dt>Tone</dt><dd id="plan-tone">—</dd></div>
+            <div><dt>Model calls</dt><dd id="model-calls">0</dd></div>
+          </dl>
+        </article>
+
+        <article class="panel preview-panel">
+          <div class="panel-title"><span class="icon-box">▣</span><div><p>IMMUTABLE ASSET</p><h3>Vertical promo</h3></div><span class="tag" id="artifact-status">WAITING</span></div>
+          <div class="phone-frame">
+            <video id="promo-video" muted loop playsinline controls preload="metadata" hidden></video>
+            <div id="promo-placeholder"><span>9:16</span><p>Rendered campaign artifact</p></div>
+          </div>
+          <div class="artifact-meta"><code id="artifact-id">artifact: —</code><span id="artifact-duration">—</span></div>
+        </article>
+
+        <article class="panel policy-panel">
+          <div class="panel-title"><span class="icon-box">✓</span><div><p>DETERMINISTIC AUTHORITY</p><h3>Release policy</h3></div><span class="tag" id="policy-status">NOT RUN</span></div>
+          <div class="checks" id="policy-checks"><p class="empty">No validation record yet.</p></div>
+          <p class="boundary-note" id="authority-copy">The configured model proposes. Typed code decides whether any side effect is allowed.</p>
+        </article>
+
+        <article class="panel receipts-panel">
+          <div class="panel-title"><span class="icon-box">◎</span><div><p>SIDE-EFFECT EVIDENCE</p><h3>Destination receipts</h3></div><span class="tag" id="receipt-status">0 VERIFIED</span></div>
+          <div class="receipts" id="receipts"><p class="empty">No publishing attempts yet.</p></div>
+        </article>
+
+        <article class="panel trace-panel">
+          <div class="panel-title"><span class="icon-box">⌁</span><div><p>ONE CORRELATED TRACE</p><h3>Agent activity</h3></div><span class="tag" id="retry-status">0 RETRIES</span></div>
+          <div class="trace-list" id="trace-list"><p class="empty">Steps will appear as the duty runs.</p></div>
+        </article>
+
+        <article class="panel variants-panel wide">
+          <div class="panel-title"><span class="icon-box">≋</span><div><p>PLATFORM-NATIVE COPY</p><h3>Channel variants</h3></div><span class="tag" id="variant-count">0 VARIANTS</span></div>
+          <div class="variant-grid" id="variants"><p class="empty">Distinct copy will appear after planning.</p></div>
+        </article>
+
+        <article class="panel recap-panel wide">
+          <div class="panel-title"><span class="icon-box">↺</span><div><p>POST-LIVE CONTINUITY</p><h3>Recap + audience questions</h3></div><span class="tag" id="recap-status">WAITING FOR END</span></div>
+          <h4 id="recap-headline">The campaign remains open until a live-ended event arrives.</h4>
+          <p id="recap-summary" class="recap-summary">The same durable campaign will retain context, draft a recap, and cluster repeated questions.</p>
+          <div class="clusters" id="clusters"></div>
+        </article>
+      </section>
+
+      <footer>
+        <p><strong>Creator Duty by Sigmora</strong> · Taskmaster entry · deterministic external-service sandbox clearly disclosed</p>
+        <a href="https://sigmora.org/?utm_source=creator_duty_demo&amp;utm_medium=product&amp;utm_campaign=all_things_agentic_2026">Explore Sigmora →</a>
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "name": "sigmora-creator-duty",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Event-driven creator campaign agent built for the 2026 All Things Agentic Hackathon.",
+  "homepage": "https://creator-duty-ra3flcxmjq-uc.a.run.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlsniperpro/sigmora-creator-duty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlsniperpro/sigmora-creator-duty/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm test && npm run build",
+    "demo": "tsx src/cli.ts demo",
+    "demo:server": "NODE_ENV=development ALLOW_DEMO_TRIGGER=true tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "smoke:gemini": "tsx scripts/live-model-smoke.ts",
+    "start": "node dist/src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "9.0.0",
+    "@google-cloud/pubsub": "6.0.1",
+    "@google-cloud/storage": "8.0.1",
+    "@google/genai": "2.19.0",
+    "express": "5.2.1",
+    "google-auth-library": "11.0.2",
+    "sharp": "0.35.4",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "26.4.0",
+    "@types/supertest": "7.2.1",
+    "supertest": "7.2.2",
+    "tsx": "4.23.12",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
+  }
+}

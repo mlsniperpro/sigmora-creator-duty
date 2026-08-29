@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Creator Duty is server-only. The Admin/Node server client authenticates
+    // with IAM and bypasses these client rules. Browser and mobile clients must
+    // use the bounded HTTP judging surface instead of reading state directly.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
