@@ -7,12 +7,12 @@ The current claim/no-claim ledger is [evidence status](evidence-status.md).
 
 ## Validity gate
 
-- [ ] Public repository opens in a signed-out browser.
+- [x] Public repository opens signed out over anonymous HTTPS.
 - [x] Apache-2.0 is detected at the repository root.
 - [x] New-work disclosure is visible from the first README screen.
 - [x] Personal friction and autonomous event trigger are explained before the
       feature list.
-- [ ] `npm ci`, `npm test`, `npm run demo`, and `npm run build` pass from a fresh
+- [x] `npm ci`, `npm test`, `npm run demo`, and `npm run build` pass from a fresh
       checkout.
 - [x] `node scripts/scan-release.mjs` passes.
 - [x] No credential, private customer data, or live account token is present.
