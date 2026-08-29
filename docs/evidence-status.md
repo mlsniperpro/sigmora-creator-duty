@@ -7,8 +7,8 @@ evidence.
 
 | Evidence item | Current status | Claim rule |
 | --- | --- | --- |
-| Local deterministic tests and demo | **Evidenced:** 22 test files and 156 tests pass; demo passes | Claim local reproducibility, not a Google model call |
-| Public repository URL | **Not yet evidenced—do not claim** | Add only after the repository opens signed out |
+| Local deterministic tests and demo | **Evidenced:** 11 source test files and 78 tests pass with FFmpeg; the demo passes | Claim local reproducibility, not a Google model call |
+| Public repository URL | **Evidenced:** [public Apache-2.0 repository](https://github.com/mlsniperpro/sigmora-creator-duty), checked signed out | Keep the final commit and CI status visible |
 | Public Cloud Run URL | **Evidenced:** [live panel](https://creator-duty-ra3flcxmjq-uc.a.run.app), full hero campaign `cmp_5dc5f550c5146bebdbc2` | Health, panel, final image, and hero path verified |
 | Authenticated Pub/Sub push | **Evidenced:** exact audience/identity plus start, replay, and end message IDs | Matching intake and campaign trace retained |
 | Firestore cloud campaign/checkpoints | **Evidenced:** campaign, both claims, stream index, and four matching provider records | Same campaign/trace; see [cloud evidence](cloud-evidence.md) |

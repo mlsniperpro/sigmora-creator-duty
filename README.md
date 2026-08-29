@@ -61,7 +61,8 @@ are preserved. Gemma is treated the same way and has no default model ID.
 
 ## Five-minute local setup
 
-Requirements: Node.js 22 or newer. The container and CI use Node.js 24.
+Requirements: Node.js 22 or newer and FFmpeg. The container and CI use Node.js
+24 and install FFmpeg explicitly.
 
 ```bash
 npm ci

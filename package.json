@@ -23,7 +23,7 @@
     "dev": "tsx watch src/server.ts",
     "smoke:gemini": "tsx scripts/live-model-smoke.ts",
     "start": "node dist/src/server.js",
-    "test": "vitest run",
+    "test": "vitest run tests",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
