@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Creator Duty architecture</title>
+  <desc id="desc">Event-driven Creator Duty workflow using Pub/Sub, Cloud Run, Gemini through the Google GenAI SDK on Vertex AI, Firestore and Cloud Storage.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07110f"/>
+      <stop offset="0.55" stop-color="#0b1b18"/>
+      <stop offset="1" stop-color="#101327"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11251f"/>
+      <stop offset="1" stop-color="#11182a"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#66dca5"/>
+      <stop offset="1" stop-color="#b0f3c9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#84e5b1"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#738b86"/>
+    </marker>
+    <style>
+      .title { font: 700 64px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f6fff9; letter-spacing: -1px; }
+      .subtitle { font: 400 27px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #a7c3b8; }
+      .section { font: 700 23px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #b0f3c9; letter-spacing: 2px; text-transform: uppercase; }
+      .cardTitle { font: 700 25px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f5fff8; }
+      .cardText { font: 400 20px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #b7cdc3; }
+      .small { font: 400 18px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #9db6ab; }
+      .pill { font: 700 17px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0a1712; letter-spacing: 1px; }
+      .cloud { font: 700 22px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #d9f7e5; }
+      .mono { font: 600 18px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #9df0bd; }
+    </style>
+  </defs>
+
+  <rect width="2400" height="1600" fill="url(#bg)"/>
+  <circle cx="2160" cy="120" r="320" fill="#7c5cff" opacity="0.08"/>
+  <circle cx="180" cy="1460" r="360" fill="#39d98a" opacity="0.07"/>
+
+  <text x="120" y="125" class="section">SIGMORA / AGENTIC SYSTEM VIEW</text>
+  <text x="120" y="205" class="title">Creator Duty architecture</text>
+  <text x="120" y="258" class="subtitle">One bounded workflow from live event to safe, recoverable multi-channel campaign.</text>
+  <rect x="1900" y="116" width="350" height="58" rx="29" fill="url(#mint)"/>
+  <text x="2075" y="153" class="pill" text-anchor="middle">GEMINI + GOOGLE CLOUD</text>
+
+  <text x="120" y="345" class="section">EVENT INPUTS</text>
+  <g filter="url(#shadow)">
+    <rect x="120" y="382" width="360" height="142" rx="20" fill="url(#panel)" stroke="#2d5e4d" stroke-width="2"/>
+    <circle cx="170" cy="432" r="23" fill="#83e6b1"/>
+    <path d="M158 433h24M170 421v24" stroke="#092016" stroke-width="5" stroke-linecap="round"/>
+    <text x="215" y="432" class="cardTitle">Live started</text>
+    <text x="160" y="478" class="mono">creator.live.started</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="120" y="560" width="360" height="142" rx="20" fill="url(#panel)" stroke="#2d5e4d" stroke-width="2"/>
+    <circle cx="170" cy="610" r="23" fill="#83e6b1"/>
+    <path d="M158 611h24M170 599v24" stroke="#092016" stroke-width="5" stroke-linecap="round"/>
+    <text x="215" y="610" class="cardTitle">Live ended</text>
+    <text x="160" y="656" class="mono">creator.live.ended</text>
+  </g>
+  <path d="M480 453 H570 V550 H670" fill="none" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M480 631 H570 V550" fill="none" stroke="#84e5b1" stroke-width="4"/>
+  <g filter="url(#shadow)">
+    <rect x="670" y="475" width="300" height="150" rx="22" fill="#123126" stroke="#66dca5" stroke-width="3"/>
+    <text x="820" y="535" class="cardTitle" text-anchor="middle">Pub/Sub</text>
+    <text x="820" y="574" class="cardText" text-anchor="middle">authenticated OIDC push</text>
+    <text x="820" y="604" class="small" text-anchor="middle">durable event delivery</text>
+  </g>
+
+  <text x="1050" y="345" class="section">CREATOR DUTY ON CLOUD RUN</text>
+  <g filter="url(#shadow)">
+    <rect x="1040" y="382" width="1040" height="590" rx="28" fill="url(#panel)" stroke="#438c70" stroke-width="3"/>
+    <rect x="1078" y="414" width="964" height="54" rx="14" fill="#19382e"/>
+    <text x="1104" y="449" class="cloud">Event-driven deterministic state machine</text>
+    <text x="2012" y="449" class="mono" text-anchor="end">Cloud Run / Node / TypeScript</text>
+
+    <rect x="1080" y="505" width="210" height="132" rx="17" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1185" y="550" class="cardTitle" text-anchor="middle">Claim</text>
+    <text x="1185" y="584" class="cardText" text-anchor="middle">fingerprint +</text>
+    <text x="1185" y="612" class="cardText" text-anchor="middle">atomic idempotency</text>
+
+    <rect x="1320" y="505" width="250" height="132" rx="17" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1445" y="550" class="cardTitle" text-anchor="middle">Plan</text>
+    <text x="1445" y="584" class="cardText" text-anchor="middle">bounded creative</text>
+    <text x="1445" y="612" class="cardText" text-anchor="middle">decision in JSON</text>
+
+    <rect x="1600" y="505" width="210" height="132" rx="17" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1705" y="550" class="cardTitle" text-anchor="middle">Produce</text>
+    <text x="1705" y="584" class="cardText" text-anchor="middle">one immutable</text>
+    <text x="1705" y="612" class="cardText" text-anchor="middle">promo artifact</text>
+
+    <rect x="1840" y="505" width="200" height="132" rx="17" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1940" y="550" class="cardTitle" text-anchor="middle">Verify</text>
+    <text x="1940" y="584" class="cardText" text-anchor="middle">receipts +</text>
+    <text x="1940" y="612" class="cardText" text-anchor="middle">target retry</text>
+
+    <path d="M1290 571 H1320" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M1570 571 H1600" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M1810 571 H1840" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <rect x="1080" y="700" width="300" height="176" rx="18" fill="#1a1f37" stroke="#6959b6" stroke-width="2"/>
+    <text x="1230" y="744" class="cardTitle" text-anchor="middle">GeminiModelAgent</text>
+    <text x="1230" y="781" class="cardText" text-anchor="middle">campaign angle + variants</text>
+    <rect x="1128" y="810" width="204" height="35" rx="17" fill="#a98cff"/>
+    <text x="1230" y="834" class="pill" text-anchor="middle">gemini-3.7-flash</text>
+
+    <rect x="1410" y="700" width="300" height="176" rx="18" fill="#1a1f37" stroke="#6959b6" stroke-width="2"/>
+    <text x="1560" y="744" class="cardTitle" text-anchor="middle">Google GenAI SDK</text>
+    <text x="1560" y="781" class="cardText" text-anchor="middle">typed generateContent()</text>
+    <text x="1560" y="824" class="small" text-anchor="middle">Vertex AI / structured JSON</text>
+
+    <rect x="1740" y="700" width="300" height="176" rx="18" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1890" y="744" class="cardTitle" text-anchor="middle">Policy + release</text>
+    <text x="1890" y="781" class="cardText" text-anchor="middle">typed authorization</text>
+    <text x="1890" y="815" class="cardText" text-anchor="middle">bounded channel set</text>
+    <text x="1890" y="849" class="small" text-anchor="middle">publish only after validation</text>
+
+    <path d="M1445 637 V680 H1230 V700" fill="none" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M1445 637 V680 H1560 V700" fill="none" stroke="#84e5b1" stroke-width="4"/>
+    <path d="M1705 637 V680 H1890 V700" fill="none" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+  <path d="M970 550 H1040" fill="none" stroke="#84e5b1" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text x="120" y="820" class="section">DURABLE EVIDENCE</text>
+  <g filter="url(#shadow)">
+    <rect x="120" y="860" width="480" height="190" rx="20" fill="url(#panel)" stroke="#2d5e4d" stroke-width="2"/>
+    <text x="160" y="916" class="cardTitle">Firestore</text>
+    <text x="160" y="956" class="cardText">campaigns · claims · stream index</text>
+    <text x="160" y="994" class="cardText">provider-publication ledger</text>
+    <text x="160" y="1030" class="small">transactions make replay safe</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="630" y="860" width="340" height="190" rx="20" fill="url(#panel)" stroke="#2d5e4d" stroke-width="2"/>
+    <text x="670" y="916" class="cardTitle">Cloud Storage</text>
+    <text x="670" y="956" class="cardText">private immutable artifacts</text>
+    <text x="670" y="994" class="small">release hash + media evidence</text>
+  </g>
+  <path d="M1040 900 H970" fill="none" stroke="#738b86" stroke-width="3" marker-end="url(#arrowMuted)"/>
+  <path d="M1040 900 H600" fill="none" stroke="#738b86" stroke-width="3" marker-end="url(#arrowMuted)"/>
+
+  <text x="1050" y="1055" class="section">NARROW SIDE EFFECTS</text>
+  <g filter="url(#shadow)">
+    <rect x="1040" y="1090" width="490" height="190" rx="20" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1080" y="1148" class="cardTitle">Scoped media adapter</text>
+    <text x="1080" y="1188" class="cardText">deterministic renderer in base deployment</text>
+    <text x="1080" y="1228" class="small">one artifact · fixed dimensions · fixed duration</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1580" y="1090" width="500" height="190" rx="20" fill="#172d27" stroke="#376e5a" stroke-width="2"/>
+    <text x="1620" y="1148" class="cardTitle">Scoped publisher</text>
+    <text x="1620" y="1188" class="cardText">four labeled sandbox destinations</text>
+    <text x="1620" y="1228" class="small">receipt verification · target-only retry</text>
+  </g>
+  <path d="M1890 876 V1025 H1285 V1090" fill="none" stroke="#738b86" stroke-width="3" marker-end="url(#arrowMuted)"/>
+  <path d="M1940 637 V1025 H1830 V1090" fill="none" stroke="#738b86" stroke-width="3" marker-end="url(#arrowMuted)"/>
+
+  <rect x="120" y="1370" width="2160" height="104" rx="20" fill="#10231d" stroke="#2b5a49" stroke-width="2"/>
+  <circle cx="170" cy="1422" r="12" fill="#a98cff"/>
+  <text x="200" y="1430" class="cardText">Gemini chooses bounded creative intent.</text>
+  <circle cx="900" cy="1422" r="12" fill="#83e6b1"/>
+  <text x="930" y="1430" class="cardText">Typed code controls authorization, policy, retries, and side effects.</text>
+  <circle cx="1880" cy="1422" r="12" fill="#738b86"/>
+  <text x="1910" y="1430" class="cardText">Read-only judging panel exposes evidence.</text>
+</svg>
