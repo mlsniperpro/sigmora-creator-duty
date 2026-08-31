@@ -106,5 +106,8 @@ receipts, and zero duplicate posts.
 - Media is a real deterministic rendered artifact, not a Veo call.
 - Veo, Lyria, and Gemma paths remain disabled and unclaimed.
 - The model-authored cost estimate is policy-bounded but is not metered billing.
-- A public submission video, bonus content, bonus social post, and Devpost URL
-  remain separate submission tasks.
+- The public submission video is available at
+  https://www.youtube.com/watch?v=qMmDiSgRm8Q; it is a narrated competition
+  walkthrough, not evidence of external social-network publication.
+- Bonus content, bonus social posts, and the Devpost submission URL remain
+  separate submission items.

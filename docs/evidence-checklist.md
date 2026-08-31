@@ -85,9 +85,9 @@ The current claim/no-claim ledger is [evidence status](evidence-status.md).
 
 ## Public submission package
 
-- [ ] Video is public, English, and under four minutes.
-- [ ] Working product appears in the first 12 seconds.
-- [ ] Cloud deployment and matching trace appear in the video.
+- [x] Video is public, English, and under four minutes.
+- [x] Working product appears in the first 12 seconds.
+- [x] Cloud deployment and matching trace appear in the video.
 - [ ] Repository, demo, architecture, setup, disclosure, and write-up links work
       signed out.
 - [ ] Public build content contains the required competition disclosure sentence.

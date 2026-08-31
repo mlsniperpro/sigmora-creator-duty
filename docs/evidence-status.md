@@ -18,7 +18,7 @@ evidence.
 | Veo artifact | **Not yet evidenced—do not claim** | Require completed operation and model/artifact evidence |
 | Lyria artifact | **Not yet evidenced—do not claim** | Require completed operation and model/audio evidence |
 | Gemma critic | **Not yet evidenced—do not claim** | Require exact supported model invocation and typed result |
-| Public submission video | **Not yet evidenced—do not claim** | Require signed-out playback, English audio/captions, and runtime under four minutes |
+| Public submission video | **Evidenced:** [public YouTube demo](https://www.youtube.com/watch?v=qMmDiSgRm8Q), 91.4 seconds | Anonymous playback verified; English Gemini narration and captions; under four minutes |
 | Public build article, podcast, or film | **Not yet evidenced—do not claim** | Require public access and the competition disclosure sentence |
 | Public social bonus post | **Not yet evidenced—do not claim** | Require public URL and exact `#AllThingsAgenticHackathon` hashtag |
 | Devpost submission URL | **Not yet evidenced—do not claim** | Require signed-out access and final frozen links |

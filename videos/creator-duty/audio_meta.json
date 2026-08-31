@@ -1,0 +1,1070 @@
+{
+  "tts_provider": "vertex_ai",
+  "tts_model": "gemini-3.1-flash-tts-preview",
+  "voice_id": "Kore",
+  "language_code": "en-US",
+  "word_timing_source": "deterministic text-to-duration mapping for Gemini audio",
+  "bgm": null,
+  "bgm_pending": false,
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/voice/01.wav",
+      "duration_s": 12,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "Creators",
+          "start": 0,
+          "end": 0.66
+        },
+        {
+          "id": "word-1",
+          "text": "should",
+          "start": 0.66,
+          "end": 1.155
+        },
+        {
+          "id": "word-2",
+          "text": "stay",
+          "start": 1.155,
+          "end": 1.485
+        },
+        {
+          "id": "word-3",
+          "text": "with",
+          "start": 1.485,
+          "end": 1.814
+        },
+        {
+          "id": "word-4",
+          "text": "their",
+          "start": 1.814,
+          "end": 2.227
+        },
+        {
+          "id": "word-5",
+          "text": "audience,",
+          "start": 2.227,
+          "end": 3.052
+        },
+        {
+          "id": "word-6",
+          "text": "not",
+          "start": 3.052,
+          "end": 3.299
+        },
+        {
+          "id": "word-7",
+          "text": "tab-switch",
+          "start": 3.299,
+          "end": 4.041
+        },
+        {
+          "id": "word-8",
+          "text": "through",
+          "start": 4.041,
+          "end": 4.619
+        },
+        {
+          "id": "word-9",
+          "text": "a",
+          "start": 4.619,
+          "end": 4.701
+        },
+        {
+          "id": "word-10",
+          "text": "launch",
+          "start": 4.701,
+          "end": 5.196
+        },
+        {
+          "id": "word-11",
+          "text": "checklist.",
+          "start": 5.196,
+          "end": 6.458
+        },
+        {
+          "id": "word-12",
+          "text": "Creator",
+          "start": 6.458,
+          "end": 7.035
+        },
+        {
+          "id": "word-13",
+          "text": "Duty",
+          "start": 7.035,
+          "end": 7.365
+        },
+        {
+          "id": "word-14",
+          "text": "turns",
+          "start": 7.365,
+          "end": 7.777
+        },
+        {
+          "id": "word-15",
+          "text": "one",
+          "start": 7.777,
+          "end": 8.025
+        },
+        {
+          "id": "word-16",
+          "text": "livestream",
+          "start": 8.025,
+          "end": 8.849
+        },
+        {
+          "id": "word-17",
+          "text": "event",
+          "start": 8.849,
+          "end": 9.262
+        },
+        {
+          "id": "word-18",
+          "text": "into",
+          "start": 9.262,
+          "end": 9.592
+        },
+        {
+          "id": "word-19",
+          "text": "a",
+          "start": 9.592,
+          "end": 9.674
+        },
+        {
+          "id": "word-20",
+          "text": "campaign",
+          "start": 9.674,
+          "end": 10.334
+        },
+        {
+          "id": "word-21",
+          "text": "that",
+          "start": 10.334,
+          "end": 10.664
+        },
+        {
+          "id": "word-22",
+          "text": "can",
+          "start": 10.664,
+          "end": 10.911
+        },
+        {
+          "id": "word-23",
+          "text": "run",
+          "start": 10.911,
+          "end": 11.159
+        },
+        {
+          "id": "word-24",
+          "text": "itself.",
+          "start": 11.159,
+          "end": 12
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/voice/02.wav",
+      "duration_s": 14.12,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "The",
+          "start": 0,
+          "end": 0.282
+        },
+        {
+          "id": "word-1",
+          "text": "event",
+          "start": 0.282,
+          "end": 0.752
+        },
+        {
+          "id": "word-2",
+          "text": "arrives",
+          "start": 0.752,
+          "end": 1.409
+        },
+        {
+          "id": "word-3",
+          "text": "as",
+          "start": 1.409,
+          "end": 1.597
+        },
+        {
+          "id": "word-4",
+          "text": "a",
+          "start": 1.597,
+          "end": 1.691
+        },
+        {
+          "id": "word-5",
+          "text": "narrow",
+          "start": 1.691,
+          "end": 2.255
+        },
+        {
+          "id": "word-6",
+          "text": "preauthorization:",
+          "start": 2.255,
+          "end": 4.134
+        },
+        {
+          "id": "word-7",
+          "text": "one",
+          "start": 4.134,
+          "end": 4.415
+        },
+        {
+          "id": "word-8",
+          "text": "creator,",
+          "start": 4.415,
+          "end": 5.237
+        },
+        {
+          "id": "word-9",
+          "text": "four",
+          "start": 5.237,
+          "end": 5.613
+        },
+        {
+          "id": "word-10",
+          "text": "sandbox",
+          "start": 5.613,
+          "end": 6.271
+        },
+        {
+          "id": "word-11",
+          "text": "destinations,",
+          "start": 6.271,
+          "end": 7.68
+        },
+        {
+          "id": "word-12",
+          "text": "one",
+          "start": 7.68,
+          "end": 7.962
+        },
+        {
+          "id": "word-13",
+          "text": "video,",
+          "start": 7.962,
+          "end": 8.549
+        },
+        {
+          "id": "word-14",
+          "text": "and",
+          "start": 8.549,
+          "end": 8.831
+        },
+        {
+          "id": "word-15",
+          "text": "a",
+          "start": 8.831,
+          "end": 8.925
+        },
+        {
+          "id": "word-16",
+          "text": "model-budget",
+          "start": 8.925,
+          "end": 9.958
+        },
+        {
+          "id": "word-17",
+          "text": "limit.",
+          "start": 9.958,
+          "end": 10.757
+        },
+        {
+          "id": "word-18",
+          "text": "Gemini",
+          "start": 10.757,
+          "end": 11.32
+        },
+        {
+          "id": "word-19",
+          "text": "then",
+          "start": 11.32,
+          "end": 11.696
+        },
+        {
+          "id": "word-20",
+          "text": "proposes",
+          "start": 11.696,
+          "end": 12.448
+        },
+        {
+          "id": "word-21",
+          "text": "the",
+          "start": 12.448,
+          "end": 12.73
+        },
+        {
+          "id": "word-22",
+          "text": "angle",
+          "start": 12.73,
+          "end": 13.199
+        },
+        {
+          "id": "word-23",
+          "text": "and",
+          "start": 13.199,
+          "end": 13.481
+        },
+        {
+          "id": "word-24",
+          "text": "tone.",
+          "start": 13.481,
+          "end": 14.12
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/voice/03.wav",
+      "duration_s": 13.28,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "The",
+          "start": 0,
+          "end": 0.269
+        },
+        {
+          "id": "word-1",
+          "text": "policy",
+          "start": 0.269,
+          "end": 0.808
+        },
+        {
+          "id": "word-2",
+          "text": "is",
+          "start": 0.808,
+          "end": 0.988
+        },
+        {
+          "id": "word-3",
+          "text": "deterministic.",
+          "start": 0.988,
+          "end": 2.972
+        },
+        {
+          "id": "word-4",
+          "text": "It",
+          "start": 2.972,
+          "end": 3.152
+        },
+        {
+          "id": "word-5",
+          "text": "checks",
+          "start": 3.152,
+          "end": 3.69
+        },
+        {
+          "id": "word-6",
+          "text": "the",
+          "start": 3.69,
+          "end": 3.96
+        },
+        {
+          "id": "word-7",
+          "text": "creator,",
+          "start": 3.96,
+          "end": 4.745
+        },
+        {
+          "id": "word-8",
+          "text": "the",
+          "start": 4.745,
+          "end": 5.015
+        },
+        {
+          "id": "word-9",
+          "text": "profile,",
+          "start": 5.015,
+          "end": 5.8
+        },
+        {
+          "id": "word-10",
+          "text": "the",
+          "start": 5.8,
+          "end": 6.07
+        },
+        {
+          "id": "word-11",
+          "text": "exact",
+          "start": 6.07,
+          "end": 6.519
+        },
+        {
+          "id": "word-12",
+          "text": "channel",
+          "start": 6.519,
+          "end": 7.147
+        },
+        {
+          "id": "word-13",
+          "text": "set,",
+          "start": 7.147,
+          "end": 7.484
+        },
+        {
+          "id": "word-14",
+          "text": "the",
+          "start": 7.484,
+          "end": 7.753
+        },
+        {
+          "id": "word-15",
+          "text": "vertical",
+          "start": 7.753,
+          "end": 8.472
+        },
+        {
+          "id": "word-16",
+          "text": "format,",
+          "start": 8.472,
+          "end": 9.145
+        },
+        {
+          "id": "word-17",
+          "text": "the",
+          "start": 9.145,
+          "end": 9.415
+        },
+        {
+          "id": "word-18",
+          "text": "spend",
+          "start": 9.415,
+          "end": 9.863
+        },
+        {
+          "id": "word-19",
+          "text": "cap,",
+          "start": 9.863,
+          "end": 10.2
+        },
+        {
+          "id": "word-20",
+          "text": "the",
+          "start": 10.2,
+          "end": 10.47
+        },
+        {
+          "id": "word-21",
+          "text": "copy",
+          "start": 10.47,
+          "end": 10.829
+        },
+        {
+          "id": "word-22",
+          "text": "limits,",
+          "start": 10.829,
+          "end": 11.502
+        },
+        {
+          "id": "word-23",
+          "text": "and",
+          "start": 11.502,
+          "end": 11.772
+        },
+        {
+          "id": "word-24",
+          "text": "the",
+          "start": 11.772,
+          "end": 12.041
+        },
+        {
+          "id": "word-25",
+          "text": "allowed",
+          "start": 12.041,
+          "end": 12.669
+        },
+        {
+          "id": "word-26",
+          "text": "link.",
+          "start": 12.669,
+          "end": 13.28
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/voice/04.wav",
+      "duration_s": 14,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "Once",
+          "start": 0,
+          "end": 0.421
+        },
+        {
+          "id": "word-1",
+          "text": "approved,",
+          "start": 0.421,
+          "end": 1.472
+        },
+        {
+          "id": "word-2",
+          "text": "one",
+          "start": 1.472,
+          "end": 1.787
+        },
+        {
+          "id": "word-3",
+          "text": "immutable",
+          "start": 1.787,
+          "end": 2.734
+        },
+        {
+          "id": "word-4",
+          "text": "promo",
+          "start": 2.734,
+          "end": 3.259
+        },
+        {
+          "id": "word-5",
+          "text": "becomes",
+          "start": 3.259,
+          "end": 3.995
+        },
+        {
+          "id": "word-6",
+          "text": "four",
+          "start": 3.995,
+          "end": 4.416
+        },
+        {
+          "id": "word-7",
+          "text": "platform-native",
+          "start": 4.416,
+          "end": 5.888
+        },
+        {
+          "id": "word-8",
+          "text": "variants.",
+          "start": 5.888,
+          "end": 7.318
+        },
+        {
+          "id": "word-9",
+          "text": "Each",
+          "start": 7.318,
+          "end": 7.739
+        },
+        {
+          "id": "word-10",
+          "text": "destination",
+          "start": 7.739,
+          "end": 8.895
+        },
+        {
+          "id": "word-11",
+          "text": "gets",
+          "start": 8.895,
+          "end": 9.316
+        },
+        {
+          "id": "word-12",
+          "text": "a",
+          "start": 9.316,
+          "end": 9.421
+        },
+        {
+          "id": "word-13",
+          "text": "scoped",
+          "start": 9.421,
+          "end": 10.052
+        },
+        {
+          "id": "word-14",
+          "text": "post,",
+          "start": 10.052,
+          "end": 10.578
+        },
+        {
+          "id": "word-15",
+          "text": "a",
+          "start": 10.578,
+          "end": 10.683
+        },
+        {
+          "id": "word-16",
+          "text": "receipt,",
+          "start": 10.683,
+          "end": 11.603
+        },
+        {
+          "id": "word-17",
+          "text": "and",
+          "start": 11.603,
+          "end": 11.918
+        },
+        {
+          "id": "word-18",
+          "text": "a",
+          "start": 11.918,
+          "end": 12.023
+        },
+        {
+          "id": "word-19",
+          "text": "verification",
+          "start": 12.023,
+          "end": 13.285
+        },
+        {
+          "id": "word-20",
+          "text": "step.",
+          "start": 13.285,
+          "end": 14
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/voice/05.wav",
+      "duration_s": 13,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "If",
+          "start": 0,
+          "end": 0.187
+        },
+        {
+          "id": "word-1",
+          "text": "one",
+          "start": 0.187,
+          "end": 0.466
+        },
+        {
+          "id": "word-2",
+          "text": "receipt",
+          "start": 0.466,
+          "end": 1.119
+        },
+        {
+          "id": "word-3",
+          "text": "fails,",
+          "start": 1.119,
+          "end": 1.702
+        },
+        {
+          "id": "word-4",
+          "text": "Creator",
+          "start": 1.702,
+          "end": 2.355
+        },
+        {
+          "id": "word-5",
+          "text": "Duty",
+          "start": 2.355,
+          "end": 2.728
+        },
+        {
+          "id": "word-6",
+          "text": "retries",
+          "start": 2.728,
+          "end": 3.381
+        },
+        {
+          "id": "word-7",
+          "text": "only",
+          "start": 3.381,
+          "end": 3.754
+        },
+        {
+          "id": "word-8",
+          "text": "that",
+          "start": 3.754,
+          "end": 4.127
+        },
+        {
+          "id": "word-9",
+          "text": "target.",
+          "start": 4.127,
+          "end": 5.078
+        },
+        {
+          "id": "word-10",
+          "text": "A",
+          "start": 5.078,
+          "end": 5.171
+        },
+        {
+          "id": "word-11",
+          "text": "correlated",
+          "start": 5.171,
+          "end": 6.104
+        },
+        {
+          "id": "word-12",
+          "text": "trace",
+          "start": 6.104,
+          "end": 6.57
+        },
+        {
+          "id": "word-13",
+          "text": "makes",
+          "start": 6.57,
+          "end": 7.036
+        },
+        {
+          "id": "word-14",
+          "text": "the",
+          "start": 7.036,
+          "end": 7.316
+        },
+        {
+          "id": "word-15",
+          "text": "recovery",
+          "start": 7.316,
+          "end": 8.062
+        },
+        {
+          "id": "word-16",
+          "text": "visible,",
+          "start": 8.062,
+          "end": 8.878
+        },
+        {
+          "id": "word-17",
+          "text": "while",
+          "start": 8.878,
+          "end": 9.344
+        },
+        {
+          "id": "word-18",
+          "text": "idempotency",
+          "start": 9.344,
+          "end": 10.37
+        },
+        {
+          "id": "word-19",
+          "text": "prevents",
+          "start": 10.37,
+          "end": 11.116
+        },
+        {
+          "id": "word-20",
+          "text": "a",
+          "start": 11.116,
+          "end": 11.209
+        },
+        {
+          "id": "word-21",
+          "text": "duplicate",
+          "start": 11.209,
+          "end": 12.049
+        },
+        {
+          "id": "word-22",
+          "text": "replay.",
+          "start": 12.049,
+          "end": 13
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/voice/06.wav",
+      "duration_s": 12,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "The",
+          "start": 0,
+          "end": 0.258
+        },
+        {
+          "id": "word-1",
+          "text": "livestream",
+          "start": 0.258,
+          "end": 1.117
+        },
+        {
+          "id": "word-2",
+          "text": "does",
+          "start": 1.117,
+          "end": 1.461
+        },
+        {
+          "id": "word-3",
+          "text": "not",
+          "start": 1.461,
+          "end": 1.719
+        },
+        {
+          "id": "word-4",
+          "text": "stop",
+          "start": 1.719,
+          "end": 2.062
+        },
+        {
+          "id": "word-5",
+          "text": "at",
+          "start": 2.062,
+          "end": 2.234
+        },
+        {
+          "id": "word-6",
+          "text": "publishing.",
+          "start": 2.234,
+          "end": 3.695
+        },
+        {
+          "id": "word-7",
+          "text": "LinkedIn,",
+          "start": 3.695,
+          "end": 4.554
+        },
+        {
+          "id": "word-8",
+          "text": "YouTube",
+          "start": 4.554,
+          "end": 5.156
+        },
+        {
+          "id": "word-9",
+          "text": "Shorts,",
+          "start": 5.156,
+          "end": 5.8
+        },
+        {
+          "id": "word-10",
+          "text": "Instagram,",
+          "start": 5.8,
+          "end": 6.767
+        },
+        {
+          "id": "word-11",
+          "text": "and",
+          "start": 6.767,
+          "end": 7.025
+        },
+        {
+          "id": "word-12",
+          "text": "the",
+          "start": 7.025,
+          "end": 7.282
+        },
+        {
+          "id": "word-13",
+          "text": "remaining",
+          "start": 7.282,
+          "end": 8.056
+        },
+        {
+          "id": "word-14",
+          "text": "channel",
+          "start": 8.056,
+          "end": 8.657
+        },
+        {
+          "id": "word-15",
+          "text": "each",
+          "start": 8.657,
+          "end": 9.001
+        },
+        {
+          "id": "word-16",
+          "text": "receive",
+          "start": 9.001,
+          "end": 9.603
+        },
+        {
+          "id": "word-17",
+          "text": "copy",
+          "start": 9.603,
+          "end": 9.946
+        },
+        {
+          "id": "word-18",
+          "text": "shaped",
+          "start": 9.946,
+          "end": 10.462
+        },
+        {
+          "id": "word-19",
+          "text": "for",
+          "start": 10.462,
+          "end": 10.72
+        },
+        {
+          "id": "word-20",
+          "text": "its",
+          "start": 10.72,
+          "end": 10.977
+        },
+        {
+          "id": "word-21",
+          "text": "surface.",
+          "start": 10.977,
+          "end": 12
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "path": "assets/voice/07.wav",
+      "duration_s": 13,
+      "words": [
+        {
+          "id": "word-0",
+          "text": "When",
+          "start": 0,
+          "end": 0.405
+        },
+        {
+          "id": "word-1",
+          "text": "the",
+          "start": 0.405,
+          "end": 0.709
+        },
+        {
+          "id": "word-2",
+          "text": "stream",
+          "start": 0.709,
+          "end": 1.317
+        },
+        {
+          "id": "word-3",
+          "text": "ends,",
+          "start": 1.317,
+          "end": 1.823
+        },
+        {
+          "id": "word-4",
+          "text": "the",
+          "start": 1.823,
+          "end": 2.127
+        },
+        {
+          "id": "word-5",
+          "text": "duty",
+          "start": 2.127,
+          "end": 2.532
+        },
+        {
+          "id": "word-6",
+          "text": "closes",
+          "start": 2.532,
+          "end": 3.14
+        },
+        {
+          "id": "word-7",
+          "text": "with",
+          "start": 3.14,
+          "end": 3.545
+        },
+        {
+          "id": "word-8",
+          "text": "a",
+          "start": 3.545,
+          "end": 3.646
+        },
+        {
+          "id": "word-9",
+          "text": "recap",
+          "start": 3.646,
+          "end": 4.153
+        },
+        {
+          "id": "word-10",
+          "text": "and",
+          "start": 4.153,
+          "end": 4.457
+        },
+        {
+          "id": "word-11",
+          "text": "questions.",
+          "start": 4.457,
+          "end": 6.006
+        },
+        {
+          "id": "word-12",
+          "text": "That",
+          "start": 6.006,
+          "end": 6.411
+        },
+        {
+          "id": "word-13",
+          "text": "is",
+          "start": 6.411,
+          "end": 6.614
+        },
+        {
+          "id": "word-14",
+          "text": "the",
+          "start": 6.614,
+          "end": 6.918
+        },
+        {
+          "id": "word-15",
+          "text": "point:",
+          "start": 6.918,
+          "end": 7.551
+        },
+        {
+          "id": "word-16",
+          "text": "a",
+          "start": 7.551,
+          "end": 7.652
+        },
+        {
+          "id": "word-17",
+          "text": "safe,",
+          "start": 7.652,
+          "end": 8.159
+        },
+        {
+          "id": "word-18",
+          "text": "recoverable",
+          "start": 8.159,
+          "end": 9.273
+        },
+        {
+          "id": "word-19",
+          "text": "campaign,",
+          "start": 9.273,
+          "end": 10.286
+        },
+        {
+          "id": "word-20",
+          "text": "while",
+          "start": 10.286,
+          "end": 10.792
+        },
+        {
+          "id": "word-21",
+          "text": "the",
+          "start": 10.792,
+          "end": 11.096
+        },
+        {
+          "id": "word-22",
+          "text": "creator",
+          "start": 11.096,
+          "end": 11.805
+        },
+        {
+          "id": "word-23",
+          "text": "stays",
+          "start": 11.805,
+          "end": 12.311
+        },
+        {
+          "id": "word-24",
+          "text": "live.",
+          "start": 12.311,
+          "end": 13
+        }
+      ]
+    }
+  ],
+  "sfx": [],
+  "total_duration_s": 91.4
+}

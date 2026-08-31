@@ -1,0 +1,170 @@
+[span] Sigmora
+[strong] Creator Duty
+[span] Cloud service ready
+[span] pubsub
+[span] gemini-3.7-flash
+[p] AUTONOMOUS LIVESTREAM OPERATIONS
+[h1] Stay live.
+[em] Creator Duty
+[h1] handles the campaign.
+[p] One event becomes a planned, rendered, validated, published, verified, and recoverable campaign—without a prompt or mid-run approval.
+[button] Start a fresh hero run
+[button] Replay same event
+[button] End livestream + recap
+[p] Ready for a synthetic, clearly labeled judge fixture.
+[span] Human actions
+[small] after event delivery
+[span] Current duty
+[strong] Closed
+[small] post_live_recap_complete
+[span] Verified channels
+[strong] 4 / 4
+[small] individual receipts
+[span] Duplicate posts
+[small] after exact replay
+[span] Elapsed
+[strong] 30.0s
+[small] event to completion
+[p] DURABLE DUTY
+[h2] One bounded outcome, checkpoint by checkpoint
+[code] trace: f1f75688153101beb9b88ba30619b91e
+[span] Receive
+[small] transactional claim
+[span] Plan
+[small] Gemini structured choice
+[span] Produce
+[small] vertical campaign asset
+[span] Validate
+[small] deterministic authority
+[span] Publish
+[small] scoped sandbox tools
+[span] Verify
+[small] receipts + retry
+[span] Complete
+[small] auditable outcome
+[p] OBSERVED CHANGE
+[h3] Livestream event
+[span] SYNTHETIC
+[dt] Event
+[dd] live_evt_cloud_20260829_008
+[dt] Creator
+[dd] demo_creator
+[dt] Stream
+[dd] stream_cloud_20260829_008
+[dt] Claim
+[dd] Unique + persisted
+[p] The event grants a narrow preauthorization: one creator, four sandbox destinations, one video, and an estimated model-budget limit.
+[p] BOUNDED REASONING
+[h3] Campaign plan
+[span] gemini-3.7-flash
+[blockquote] “Stop tab-switching while live: let an autonomous agent orchestrate cross-platform distribution safely.”
+[dt] Angle
+[dd] Automating multi-channel livestream promotion with deterministic AI safety
+[dt] Moment
+[dd] 18s–32s
+[dt] Tone
+[dd] Educational
+[dt] Model calls
+[p] IMMUTABLE ASSET
+[h3] Vertical promo
+[span] IMMUTABLE
+[span] 9:16
+[p] Rendered campaign artifact
+[code] artifact: art_promo_cf51f0dfb6af795044704bc2b27a7fe7
+[span] 1080×1920 · 12s
+[p] DETERMINISTIC AUTHORITY
+[h3] Release policy
+[span] PASSED
+[span] AUTHORIZED CREATOR
+[small] Only demo_creator is preauthorized.
+[span] AUTHORIZED PROFILE
+[small] The immutable Taskmaster demo profile must authorize this run before the event.
+[span] EXACT CHANNEL SET
+[small] Every planned channel has exactly one variant.
+[span] DESTINATION CAP
+[small] The demo profile permits three or four sandbox destinations.
+[span] VERTICAL 9 16
+[small] Promo must be exactly 1080×1920 (9:16).
+[span] PROMO DURATION
+[small] Promo must be 12–15 seconds.
+[span] ONE GENERATED VIDEO
+[small] Release contains one immutable promo video.
+[span] MODEL SPEND CAP
+[small] Estimated spend must be at most $5.00.
+[span] PLATFORM COPY LIMITS
+[small] Copy must fit each destination's configured limit.
+[span] ALLOWED LINKS
+[small] Only HTTPS links on sigmora.org are permitted.
+[span] SUPPORTED CLAIMS
+[small] Unverified superlatives and guarantees are blocked.
+[span] CHANNEL NATIVE VARIANTS
+[small] Each destination must receive distinct platform-native copy.
+[span] QUIET HOURS
+[small] The demo profile publishes only from 05:00 through 20:59 UTC.
+[p] Gemini proposes. Typed code decides whether any side effect is allowed.
+[p] SIDE-EFFECT EVIDENCE
+[h3] Destination receipts
+[span] 4 VERIFIED
+[small] attempt 1 · sandbox_post_01c58d283046f41e7c725ee73dd4eeb9
+[strong] verified
+[span] Linkedin
+[small] attempt 2 · sandbox_post_c318dbe2685965c68416cf97432c4efb
+[strong] verified
+[span] Youtube Shorts
+[small] attempt 1 · sandbox_post_49952989fba335818243cb60633ffe7c
+[strong] verified
+[span] Instagram
+[small] attempt 1 · sandbox_post_fc20a566ac8c91ce9efc688298f83343
+[strong] verified
+[p] ONE CORRELATED TRACE
+[h3] Agent activity
+[span] 1 RETRY
+[span] prepare recap
+[small] step_22eecb07033c4bab38af7465 · attempt 1 · gemini-3.7-flash
+[time] succeeded
+[span] load live source
+[small] step_87631d6c8735fbf746cd2c97 · attempt 1
+[time] succeeded
+[span] duplicate guard
+[small] step_8c915a3bfc7e56517b77c92a · attempt 1
+[time] succeeded
+[span] verify receipt
+[small] step_31b8cacb566cec419715f646 · attempt 1
+[time] succeeded
+[span] verify receipt
+[small] step_31498169deae1fdf23a1a089 · attempt 1
+[time] succeeded
+[span] verify receipt
+[small] step_f1afb8cfd24eac66e1694cc0 · attempt 2
+[time] succeeded
+[span] publish release
+[small] step_a178403fcc7c299325a79bd2 · attempt 2
+[time] succeeded
+[span] lookup publication
+[small] step_4a6f49b2e966e06accd49c7e · attempt 1
+[time] succeeded
+[p] PLATFORM-NATIVE COPY
+[h3] Channel variants
+[span] 4 VARIANTS
+[span] 182 chars
+[p] Creators should be present with their audience, not tab-switching through operations checklists. See how Creator Duty plans bounded cross-platform livestream promotion automatically.
+[span] Linkedin
+[span] 263 chars
+[p] Live broadcasting demands full attention on your audience, not operational checklists. In this walkthrough, see how autonomous orchestration handles multi-platform campaign planning with deterministic safety controls and idempotency to keep distribution reliable.
+[span] Youtube Shorts
+[span] 63 chars
+[p] Automate livestream promotion across platforms with bounded AI.
+[span] Instagram
+[span] 157 chars
+[p] Stay focused on your audience while live. Creator Duty orchestrates multi-channel distribution, deterministic policies, and promo creation in the background.
+[p] POST-LIVE CONTINUITY
+[h3] Recap + audience questions
+[span] CAMPAIGN CLOSED
+[h4] Building Creator Duty Live: Post-Stream Recap and Architecture Breakdown
+[p] The livestream demonstrated Creator Duty's autonomous campaign orchestration, showing how Pub/Sub, Cloud Run, Gemini, and Firestore collaborate to generate multi-channel assets and enforce deterministic safety, idempotency, and targeted failure recovery without manual tab-switching.
+[span] Safety, Idempotency, and Failure Recovery · 2
+[span] Model Orchestration and Autonomy · 2
+[span] Platform Capabilities and Value Proposition · 2
+[strong] Creator Duty by Sigmora
+[p] · Taskmaster entry · deterministic external-service sandbox clearly disclosed
+[a] Explore Sigmora →

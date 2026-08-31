@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #121715; }
+      body { font-family: Inter, Arial, sans-serif; color: #f4f6f4; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; container-type: size; background: #121715; }
+      .clip { position: absolute; }
+      .ground { inset: 0; background: #121715; }
+      .header { left: 108px; top: 88px; right: 108px; display: flex; justify-content: space-between; align-items: baseline; }
+      .kicker { color: #9ef0ba; font: 24px/1 JetBrains Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
+      .status { color: #9ef0ba; font: 22px/1 JetBrains Mono, monospace; letter-spacing: .08em; }
+      .title { left: 108px; top: 168px; font-size: 74px; line-height: 1; letter-spacing: -.04em; }
+      .title i { color: #9ef0ba; font-style: normal; }
+      .policy { left: 108px; top: 310px; width: 1060px; height: 590px; padding: 34px; border: 1px solid rgba(244,246,244,.2); border-radius: 12px; background: rgba(0,16,49,.82); overflow: hidden; }
+      .policy img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 56% 54%; opacity: .43; filter: saturate(.72) contrast(1.12) brightness(.62); }
+      .policy::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,16,49,.93), rgba(0,16,49,.42)); }
+      .policy-label { position: relative; z-index: 1; color: #dfe4e1; font: 20px JetBrains Mono, monospace; letter-spacing: .12em; text-transform: uppercase; }
+      .policy-big { position: relative; z-index: 1; margin-top: 18px; color: #f4f6f4; font-size: 78px; line-height: .94; letter-spacing: -.05em; }
+      .checks { position: absolute; z-index: 2; right: 42px; top: 34px; width: 390px; display: grid; gap: 15px; }
+      .check { padding: 14px 16px; border: 1px solid rgba(158,240,186,.38); border-radius: 7px; color: #f4f6f4; background: rgba(18,23,21,.72); font: 17px/1.1 JetBrains Mono, monospace; }
+      .check::before { content: "✓"; margin-right: 10px; color: #9ef0ba; }
+      .note { left: 1240px; top: 350px; width: 550px; color: #dfe4e1; font-size: 30px; line-height: 1.28; }
+      .note strong { color: #9ef0ba; font-weight: 400; }
+      .small { left: 1240px; top: 700px; color: rgba(244,246,244,.64); font: 20px/1.4 JetBrains Mono, monospace; }
+      .rule { left: 1240px; top: 665px; width: 390px; height: 1px; background: rgba(158,240,186,.75); transform-origin: left; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="03-policy" data-start="0" data-duration="13.88" data-width="1920" data-height="1080">
+      <div id="ground" class="clip ground" data-start="0" data-duration="13.88" data-track-index="0"></div>
+      <div id="header" class="clip header" data-start="0" data-duration="13.88" data-track-index="1"><div class="kicker">✱ deterministic authority</div><div class="status">PASSED / 07 CHECKS</div></div>
+      <div id="title" class="clip title" data-start="0" data-duration="13.88" data-track-index="2">Gemini proposes. <i>Typed code decides.</i></div>
+      <div id="policy" class="clip policy" data-start="0" data-duration="13.88" data-track-index="3"><img src="assets/scroll-037.png" alt="Creator Duty release policy" /><div class="policy-label">release policy</div><div class="policy-big">Every side<br />effect is earned.</div><div class="checks"><div class="check">authorized creator</div><div class="check">exact channel set</div><div class="check">vertical 9:16</div><div class="check">spend ≤ $5.00</div><div class="check">allowed HTTPS link</div></div></div>
+      <div id="note" class="clip note" data-start="0" data-duration="13.88" data-track-index="4">The model suggests the campaign. <strong>Rules decide whether it can move.</strong></div>
+      <div id="rule" class="clip rule" data-start="0" data-duration="13.88" data-track-index="5"></div>
+      <div id="small" class="clip small" data-start="0" data-duration="13.88" data-track-index="6">policy checks / no unverified claims / no broad authority</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#header", "#title", "#policy", "#note", "#small"], { opacity: 0, y: 24 });
+      gsap.set("#rule", { scaleX: 0 });
+      tl.to("#header", { opacity: 1, y: 0, duration: .7, ease: "power3.out" }, 0);
+      tl.to("#title", { opacity: 1, y: 0, duration: .8, ease: "power3.out" }, 1);
+      tl.to("#policy", { opacity: 1, y: 0, duration: 1.1, ease: "power3.out" }, 2.4);
+      tl.to("#note", { opacity: 1, y: 0, duration: .8, ease: "power3.out" }, 5.2);
+      tl.to("#rule", { scaleX: 1, duration: .7, ease: "power3.out" }, 8.8);
+      tl.to("#small", { opacity: 1, y: 0, duration: .7, ease: "power3.out" }, 9.2);
+      window.__timelines["03-policy"] = tl;
+    </script>
+  </body>
+</html>

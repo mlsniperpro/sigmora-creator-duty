@@ -11,6 +11,7 @@ creator stays with the audience.
 It is the Taskmaster entry for the 2026 All Things Agentic Hackathon.
 
 [Open the live Cloud Run judging panel](https://creator-duty-ra3flcxmjq-uc.a.run.app),
+[watch the public submission video](https://www.youtube.com/watch?v=qMmDiSgRm8Q),
 [browse the public source](https://github.com/mlsniperpro/sigmora-creator-duty),
 or inspect the [verified cloud evidence](docs/cloud-evidence.md), including the
 real Gemini trace, immutable promo hash, receipts, failure recovery, exact

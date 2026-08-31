@@ -36,6 +36,8 @@ const TEXT_EXTENSIONS = new Set([
 
 const ALLOWED_MODEL_IDS = new Set([
   "gemini-3.7-flash",
+  // Competition demo narration uses the reviewed Vertex AI Gemini TTS model.
+  "gemini-3.1-flash-tts-preview",
   "veo-3.1-generate-preview",
   "lyria-3-clip-preview",
 ]);

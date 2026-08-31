@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #121715; }
+      body { font-family: Inter, Arial, sans-serif; color: #f4f6f4; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; container-type: size; background: #121715; }
+      .clip { position: absolute; }
+      .ground { inset: 0; background: #121715; }
+      .kicker { left: 108px; top: 88px; color: #9ef0ba; font: 24px/1 JetBrains Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
+      .title { left: 108px; top: 164px; width: 740px; font-size: 82px; line-height: .96; letter-spacing: -.05em; }
+      .title em { color: #9ef0ba; font-style: normal; }
+      .count { right: 110px; top: 92px; color: rgba(244,246,244,.6); font: 23px JetBrains Mono, monospace; letter-spacing: .06em; }
+      .screen { left: 108px; top: 380px; width: 1702px; height: 540px; overflow: hidden; border: 1px solid rgba(244,246,244,.2); border-radius: 14px; background: #001031; }
+      .screen img { width: 100%; height: 100%; object-fit: cover; object-position: center 75%; opacity: .58; filter: saturate(.72) contrast(1.1) brightness(.62); }
+      .cards { position: absolute; z-index: 2; left: 160px; top: 432px; width: 1590px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+      .card { min-height: 390px; padding: 22px; border: 1px solid rgba(244,246,244,.26); border-radius: 10px; background: rgba(0,16,49,.84); }
+      .card .channel { color: #9ef0ba; font: 17px JetBrains Mono, monospace; letter-spacing: .08em; text-transform: uppercase; }
+      .card h3 { margin: 32px 0 18px; font-size: 31px; line-height: 1; font-weight: 400; }
+      .card p { color: #dfe4e1; font-size: 20px; line-height: 1.32; }
+      .card .chars { margin-top: 42px; color: rgba(244,246,244,.56); font: 15px JetBrains Mono, monospace; }
+      .rule { left: 108px; top: 300px; width: 1702px; height: 1px; background: rgba(244,246,244,.2); transform-origin: left; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="06-variants" data-start="0" data-duration="12.5" data-width="1920" data-height="1080">
+      <div id="ground" class="clip ground" data-start="0" data-duration="12.5" data-track-index="0"></div>
+      <div id="kicker" class="clip kicker" data-start="0" data-duration="12.5" data-track-index="1">✱ platform-native copy</div>
+      <div id="title" class="clip title" data-start="0" data-duration="12.5" data-track-index="2">Every surface<br />gets its <em>own voice.</em></div>
+      <div id="count" class="clip count" data-start="0" data-duration="12.5" data-track-index="3">4 VARIANTS / 4 SURFACES</div>
+      <div id="rule" class="clip rule" data-start="0" data-duration="12.5" data-track-index="4"></div>
+      <div id="screen" class="clip screen" data-start="0" data-duration="12.5" data-track-index="5"><img src="assets/scroll-100.png" alt="Creator Duty channel variants" /></div>
+      <div id="cards" class="clip cards" data-start="0" data-duration="12.5" data-track-index="6"><div class="card"><div class="channel">LinkedIn</div><h3>Long-form context</h3><p>Operational detail for the professional feed.</p><div class="chars">182 chars</div></div><div class="card"><div class="channel">YouTube Shorts</div><h3>Fast hook</h3><p>Compact copy for the vertical moment.</p><div class="chars">63 chars</div></div><div class="card"><div class="channel">Instagram</div><h3>Audience-first</h3><p>Stay focused on your people while live.</p><div class="chars">157 chars</div></div><div class="card"><div class="channel">Sandbox 04</div><h3>Native handoff</h3><p>A distinct variant with the same guardrails.</p><div class="chars">263 chars</div></div></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#kicker", "#title", "#count", "#screen", "#cards"], { opacity: 0, y: 24 });
+      gsap.set("#rule", { scaleX: 0 });
+      tl.to("#kicker", { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, 0);
+      tl.to("#title", { opacity: 1, y: 0, duration: .9, ease: "power3.out" }, 1);
+      tl.to("#screen", { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 2.8);
+      tl.to("#rule", { scaleX: 1, duration: .75, ease: "power3.out" }, 4.2);
+      tl.to("#cards", { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 4.9);
+      tl.to("#count", { opacity: 1, y: 0, duration: .6, ease: "power3.out" }, 9.3);
+      window.__timelines["06-variants"] = tl;
+    </script>
+  </body>
+</html>

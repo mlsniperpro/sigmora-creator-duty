@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #121715; }
+      body { font-family: Inter, Arial, sans-serif; color: #f4f6f4; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; container-type: size; background: #121715; }
+      .clip { position: absolute; }
+      .ground { inset: 0; background: #121715; }
+      .kicker { left: 108px; top: 88px; color: #9ef0ba; font: 25px/1 JetBrains Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
+      .title { left: 108px; top: 166px; width: 740px; font-size: 84px; line-height: .98; letter-spacing: -.05em; }
+      .title em { color: #9ef0ba; font-style: normal; }
+      .artifact { left: 108px; top: 394px; width: 440px; height: 500px; overflow: hidden; border: 1px solid rgba(244,246,244,.22); border-radius: 12px; background: #001031; }
+      .artifact img { width: 100%; height: 100%; object-fit: cover; object-position: 31% 58%; filter: saturate(.72) contrast(1.05) brightness(.7); }
+      .artifact-copy { position: absolute; left: 26px; top: 28px; right: 24px; z-index: 2; color: #f4f6f4; font: 18px/1.35 JetBrains Mono, monospace; }
+      .artifact-copy b { display: block; color: #9ef0ba; font-weight: 400; margin-bottom: 10px; }
+      .receipts { left: 650px; top: 315px; width: 1150px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .receipt { min-height: 225px; padding: 25px; border: 1px solid rgba(244,246,244,.18); border-radius: 10px; background: rgba(0,16,49,.78); }
+      .receipt .name { color: #f4f6f4; font-size: 27px; }
+      .receipt .id { margin-top: 26px; color: rgba(244,246,244,.6); font: 16px/1.35 JetBrains Mono, monospace; }
+      .receipt .ok { margin-top: 22px; color: #9ef0ba; font: 18px JetBrains Mono, monospace; letter-spacing: .08em; text-transform: uppercase; }
+      .receipt .ok::before { content: "✓  "; }
+      .count { left: 1450px; top: 88px; color: #9ef0ba; font: 32px/1 JetBrains Mono, monospace; letter-spacing: .06em; }
+      .footer { left: 108px; bottom: 205px; color: rgba(244,246,244,.64); font: 19px/1.4 JetBrains Mono, monospace; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="04-receipts" data-start="0" data-duration="14.5" data-width="1920" data-height="1080">
+      <div id="ground" class="clip ground" data-start="0" data-duration="14.5" data-track-index="0"></div>
+      <div id="kicker" class="clip kicker" data-start="0" data-duration="14.5" data-track-index="1">✱ side-effect evidence</div>
+      <div id="title" class="clip title" data-start="0" data-duration="14.5" data-track-index="2">One release.<br /><em>Four receipts.</em></div>
+      <div id="count" class="clip count" data-start="0" data-duration="14.5" data-track-index="3">4 VERIFIED</div>
+      <div id="artifact" class="clip artifact" data-start="0" data-duration="14.5" data-track-index="4"><img src="assets/scroll-037.png" alt="Immutable vertical promo artifact" /><div class="artifact-copy"><b>IMMUTABLE · 9:16</b>one campaign asset<br />scoped to the release</div></div>
+      <div id="receipts" class="clip receipts" data-start="0" data-duration="14.5" data-track-index="5"><div class="receipt"><div class="name">LinkedIn</div><div class="id">attempt 1 · sandbox_post_01c58d</div><div class="ok">verified</div></div><div class="receipt"><div class="name">YouTube Shorts</div><div class="id">attempt 2 · sandbox_post_c318db</div><div class="ok">verified</div></div><div class="receipt"><div class="name">Instagram</div><div class="id">attempt 1 · sandbox_post_499529</div><div class="ok">verified</div></div><div class="receipt"><div class="name">Destination 04</div><div class="id">attempt 1 · sandbox_post_fc20a5</div><div class="ok">verified</div></div></div>
+      <div id="footer" class="clip footer" data-start="0" data-duration="14.5" data-track-index="6">scoped post → receipt → verification · synthetic sandbox only</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#kicker", "#title", "#count", "#artifact", "#receipts", "#footer"], { opacity: 0, y: 24 });
+      tl.to("#kicker", { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, 0);
+      tl.to("#title", { opacity: 1, y: 0, duration: .9, ease: "power3.out" }, 1);
+      tl.to("#artifact", { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 2.8);
+      tl.to("#receipts", { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 4.2);
+      tl.to("#count", { opacity: 1, y: 0, duration: .6, ease: "power3.out" }, 9.6);
+      tl.to("#footer", { opacity: 1, y: 0, duration: .6, ease: "power3.out" }, 10.5);
+      window.__timelines["04-receipts"] = tl;
+    </script>
+  </body>
+</html>

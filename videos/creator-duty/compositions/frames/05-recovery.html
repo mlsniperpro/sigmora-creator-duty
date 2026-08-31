@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #121715; }
+      body { font-family: Inter, Arial, sans-serif; color: #f4f6f4; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; container-type: size; background: #121715; }
+      .clip { position: absolute; }
+      .ground { inset: 0; background: #121715; }
+      .kicker { left: 108px; top: 92px; color: #9ef0ba; font: 25px/1 JetBrains Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
+      .title { left: 108px; top: 168px; width: 700px; font-size: 88px; line-height: .94; letter-spacing: -.05em; }
+      .title em { color: #9ef0ba; font-style: normal; }
+      .screen { left: 790px; top: 78px; width: 1020px; height: 870px; overflow: hidden; border: 1px solid rgba(244,246,244,.2); border-radius: 14px; background: #001031; }
+      .screen img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 65%; opacity: .72; filter: saturate(.72) contrast(1.08) brightness(.7); }
+      .screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,16,49,.7), rgba(0,16,49,.1)); }
+      .trace { left: 108px; top: 462px; width: 550px; border-left: 1px solid rgba(158,240,186,.7); padding-left: 26px; }
+      .step { margin-bottom: 24px; color: #dfe4e1; font: 20px/1.25 JetBrains Mono, monospace; }
+      .step b { display: block; color: #f4f6f4; font-weight: 400; margin-bottom: 6px; }
+      .step small { color: rgba(244,246,244,.58); font-size: 15px; }
+      .badge { left: 108px; top: 370px; padding: 14px 18px; border-radius: 999px; color: #001031; background: #9ef0ba; font: 17px/1 JetBrains Mono, monospace; letter-spacing: .08em; text-transform: uppercase; }
+      .guard { left: 108px; bottom: 205px; color: rgba(244,246,244,.64); font: 19px/1.4 JetBrains Mono, monospace; }
+      .guard strong { color: #9ef0ba; font-weight: 400; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="05-recovery" data-start="0" data-duration="13.5" data-width="1920" data-height="1080">
+      <div id="ground" class="clip ground" data-start="0" data-duration="13.5" data-track-index="0"></div>
+      <div id="kicker" class="clip kicker" data-start="0" data-duration="13.5" data-track-index="1">✱ correlated trace</div>
+      <div id="title" class="clip title" data-start="0" data-duration="13.5" data-track-index="2">Recover<br /><em>one target.</em></div>
+      <div id="badge" class="clip badge" data-start="0" data-duration="13.5" data-track-index="3">1 RETRY · TARGET ONLY</div>
+      <div id="trace" class="clip trace" data-start="0" data-duration="13.5" data-track-index="4"><div class="step"><b>verify receipt</b><small>attempt 1 · failed target</small></div><div class="step"><b>duplicate guard</b><small>exact replay ignored</small></div><div class="step"><b>verify receipt</b><small>attempt 2 · succeeded</small></div></div>
+      <div id="screen" class="clip screen" data-start="0" data-duration="13.5" data-track-index="5"><img src="assets/scroll-074.png" alt="Creator Duty correlated agent trace" /></div>
+      <div id="guard" class="clip guard" data-start="0" data-duration="13.5" data-track-index="6"><strong>safe recovery</strong> = visible failure + bounded retry + no duplicate</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#kicker", "#title", "#badge", "#trace", "#screen", "#guard"], { opacity: 0, y: 24 });
+      tl.to("#kicker", { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, 0);
+      tl.to("#title", { opacity: 1, y: 0, duration: .9, ease: "power3.out" }, 1.1);
+      tl.to("#screen", { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 3.1);
+      tl.to("#badge", { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, 4.2);
+      tl.to("#trace", { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 5.1);
+      tl.to("#guard", { opacity: 1, y: 0, duration: .7, ease: "power3.out" }, 9.5);
+      window.__timelines["05-recovery"] = tl;
+    </script>
+  </body>
+</html>

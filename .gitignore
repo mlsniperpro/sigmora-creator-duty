@@ -10,3 +10,5 @@ data/artifacts/*
 *.log
 .DS_Store
 .gcloud/
+videos/creator-duty/renders/
+videos/creator-duty/snapshots/

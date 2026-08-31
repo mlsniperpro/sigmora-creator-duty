@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #121715; }
+      body { font-family: Inter, Arial, sans-serif; color: #f4f6f4; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; container-type: size; background: #121715; }
+      .clip { position: absolute; }
+      .ground { inset: 0; background: #121715; }
+      .screen { left: 880px; top: 74px; width: 930px; height: 878px; overflow: hidden; border: 1px solid rgba(244,246,244,.2); border-radius: 14px; background: #001031; }
+      .screen img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 91%; opacity: .5; filter: saturate(.72) contrast(1.08) brightness(.62); }
+      .screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,16,49,.82), rgba(0,16,49,.14)); }
+      .kicker { left: 108px; top: 92px; color: #9ef0ba; font: 24px/1 JetBrains Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
+      .title { left: 108px; top: 170px; width: 720px; font-size: 91px; line-height: .94; letter-spacing: -.05em; }
+      .title em { color: #9ef0ba; font-style: normal; }
+      .copy { left: 112px; top: 470px; width: 630px; color: #dfe4e1; font-size: 30px; line-height: 1.3; }
+      .copy strong { color: #f4f6f4; font-weight: 400; }
+      .architecture { left: 112px; top: 705px; width: 610px; padding-top: 18px; border-top: 1px solid rgba(158,240,186,.72); color: rgba(244,246,244,.7); font: 18px/1.55 JetBrains Mono, monospace; }
+      .architecture b { color: #f4f6f4; font-weight: 400; }
+      .badge { right: 42px; top: 40px; position: absolute; z-index: 2; padding: 14px 18px; border: 1px solid rgba(158,240,186,.6); border-radius: 999px; color: #9ef0ba; background: rgba(0,16,49,.8); font: 17px/1 JetBrains Mono, monospace; letter-spacing: .08em; text-transform: uppercase; }
+      .brand { left: 112px; bottom: 205px; color: #9ef0ba; font: 19px JetBrains Mono, monospace; letter-spacing: .05em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="07-recap" data-start="0" data-duration="13" data-width="1920" data-height="1080">
+      <div id="ground" class="clip ground" data-start="0" data-duration="13" data-track-index="0"></div>
+      <div id="screen" class="clip screen" data-start="0" data-duration="13" data-track-index="1"><img src="assets/scroll-100.png" alt="Creator Duty post-live recap" /><div class="badge">campaign closed</div></div>
+      <div id="kicker" class="clip kicker" data-start="0" data-duration="13" data-track-index="2">✱ post-live continuity</div>
+      <div id="title" class="clip title" data-start="0" data-duration="13" data-track-index="3">The duty<br />ends with a<br /><em>recap.</em></div>
+      <div id="copy" class="clip copy" data-start="0" data-duration="13" data-track-index="4">A safe, recoverable campaign — <strong>while the creator stays live.</strong></div>
+      <div id="architecture" class="clip architecture" data-start="0" data-duration="13" data-track-index="5"><b>Pub/Sub → Cloud Run → Gemini → Firestore</b><br />deterministic safety · idempotency · targeted recovery</div>
+      <div id="brand" class="clip brand" data-start="0" data-duration="13" data-track-index="6">CREATOR DUTY BY SIGMORA · SYNTHETIC / DETERMINISTIC / SANDBOX</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#screen", "#kicker", "#title", "#copy", "#architecture", "#brand"], { opacity: 0, y: 24 });
+      tl.to("#screen", { opacity: 1, y: 0, duration: 1.1, ease: "power3.out" }, 0);
+      tl.to("#kicker", { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, .7);
+      tl.to("#title", { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 1.4);
+      tl.to("#copy", { opacity: 1, y: 0, duration: .8, ease: "power3.out" }, 4.5);
+      tl.to("#architecture", { opacity: 1, y: 0, duration: .8, ease: "power3.out" }, 7.1);
+      tl.to("#brand", { opacity: 1, y: 0, duration: .7, ease: "power3.out" }, 9.4);
+      window.__timelines["07-recap"] = tl;
+    </script>
+  </body>
+</html>

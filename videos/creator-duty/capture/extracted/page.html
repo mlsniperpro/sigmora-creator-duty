@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>:root {
+  color-scheme: dark;
+  --ink: #f4f6f4;
+  --muted: #9aa59f;
+  --faint: #68736d;
+  --panel: rgba(18, 23, 21, 0.84);
+  --panel-solid: #121715;
+  --line: rgba(255, 255, 255, 0.09);
+  --green: #9ef0ba;
+  --green-strong: #4ee184;
+  --amber: #f6c96f;
+  --red: #ff8e8e;
+  --blue: #a7c4ff;
+  --radius: 20px;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: #090c0b; scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(circle at 70% -10%, #173124 0, transparent 32rem), #090c0b; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.ambient { position: fixed; width: 28rem; height: 28rem; border-radius: 50%; filter: blur(120px); opacity: .12; pointer-events: none; }
+.ambient-one { background: #42db78; top: 15rem; left: -18rem; }
+.ambient-two { background: #7c70ff; top: 70rem; right: -19rem; }
+
+.topbar { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 4vw; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px); background: rgba(9, 12, 11, .82); }
+.brand { color: var(--ink); display: flex; align-items: center; gap: 10px; text-decoration: none; letter-spacing: -.01em; }
+.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; color: #08110b; background: var(--green); border-radius: 9px; font-weight: 900; }
+.brand-divider { color: #47514c; }
+.system-pills { display: flex; gap: 8px; }
+.pill, .tag { border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.03); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 750; }
+.pill { padding: 8px 11px; display: flex; align-items: center; gap: 7px; }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+.pill i.online { background: var(--green-strong); box-shadow: 0 0 12px var(--green-strong); }
+.model-pill { color: var(--blue); }
+
+main { width: min(1500px, 92vw); margin: 0 auto; }
+.hero { min-height: 390px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 6vw; align-items: center; padding: 72px 0 54px; }
+.eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .18em; margin: 0 0 16px; }
+h1 { font-size: clamp(3rem, 6vw, 6.5rem); line-height: .93; letter-spacing: -.065em; margin: 0; max-width: 920px; }
+h1 em { color: var(--green); font-style: normal; }
+.hero-copy { color: var(--muted); max-width: 720px; line-height: 1.7; font-size: 16px; margin: 26px 0 0; }
+.hero-actions { display: flex; flex-direction: column; gap: 10px; }
+.hero-actions button { border-radius: 13px; padding: 15px 17px; border: 1px solid var(--line); color: var(--ink); transition: transform .18s, background .18s, border-color .18s; }
+.hero-actions button:hover { transform: translateY(-1px); border-color: rgba(158, 240, 186, .45); }
+.hero-actions button:disabled { cursor: wait; opacity: .55; transform: none; }
+.primary { background: var(--green); color: #07110a !important; border-color: transparent !important; font-weight: 800; }
+.secondary { background: rgba(255,255,255,.035); }
+.play-icon { margin-right: 8px; font-size: 10px; }
+#action-message { color: var(--faint); font-size: 12px; line-height: 1.5; min-height: 36px; margin: 4px 2px 0; }
+
+.metrics { border: 1px solid var(--line); background: rgba(15,20,18,.72); border-radius: var(--radius); display: grid; grid-template-columns: repeat(5, 1fr); overflow: hidden; margin-bottom: 22px; }
+.metrics article { padding: 20px 22px; border-right: 1px solid var(--line); min-width: 0; }
+.metrics article:last-child { border: 0; }
+.metrics span, .metrics small { color: var(--muted); display: block; font-size: 11px; }
+.metrics strong { font-size: clamp(1.3rem, 2.5vw, 2rem); letter-spacing: -.04em; display: block; margin: 8px 0 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.workflow-shell, .panel { border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(20px); border-radius: var(--radius); }
+.workflow-shell { padding: 24px; margin-bottom: 16px; }
+.section-heading, .panel-title { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.section-heading h2 { font-size: 22px; margin: 0; letter-spacing: -.03em; }
+.section-heading .eyebrow { margin-bottom: 7px; }
+.section-heading code { color: var(--faint); font-size: 11px; max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.workflow { list-style: none; padding: 0; margin: 25px 0 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 9px; }
+.workflow li { min-width: 0; border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 13px; padding: 13px; position: relative; transition: all .3s; }
+.workflow li b { color: #59645e; font-size: 10px; display: block; margin-bottom: 9px; }
+.workflow li span { display: block; font-size: 13px; font-weight: 750; }
+.workflow li small { display: block; color: var(--faint); font-size: 10px; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.workflow li.done { border-color: rgba(78,225,132,.22); background: rgba(78,225,132,.055); }
+.workflow li.done b { color: var(--green); }
+.workflow li.active { border-color: rgba(158,240,186,.55); box-shadow: inset 0 0 0 1px rgba(158,240,186,.12), 0 0 28px rgba(78,225,132,.08); }
+.workflow li.active::after { content: ""; position: absolute; right: 11px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: .25; transform: scale(.75); } }
+
+.evidence-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.panel { grid-column: span 4; padding: 20px; min-height: 270px; overflow: hidden; }
+.panel.wide { grid-column: span 6; }
+.preview-panel { grid-row: span 2; }
+.panel-title { align-items: flex-start; }
+.panel-title > div { flex: 1; }
+.panel-title p { color: var(--faint); letter-spacing: .13em; font-size: 9px; font-weight: 800; margin: 2px 0 5px; }
+.panel-title h3 { font-size: 16px; margin: 0; }
+.icon-box { flex: 0 0 auto; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; color: var(--green); background: rgba(158,240,186,.07); border: 1px solid rgba(158,240,186,.12); }
+.tag { padding: 6px 8px; white-space: nowrap; }
+.tag.success { color: var(--green); border-color: rgba(78,225,132,.28); }
+.tag.warning { color: var(--amber); border-color: rgba(246,201,111,.28); }
+.tag.failure { color: var(--red); border-color: rgba(255,142,142,.28); }
+.synthetic { color: var(--amber); }
+.event-details, .plan-details { margin: 24px 0 0; display: grid; gap: 10px; }
+.event-details div, .plan-details div { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding-bottom: 9px; border-bottom: 1px solid rgba(255,255,255,.05); }
+dt { color: var(--faint); font-size: 11px; }
+dd { margin: 0; font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.boundary-note { color: var(--faint); font-size: 10px; line-height: 1.55; margin: 17px 0 0; }
+blockquote { margin: 25px 0 21px; padding-left: 14px; border-left: 2px solid var(--green); color: #dfe7e2; line-height: 1.55; font-size: 14px; }
+
+.phone-frame { width: min(84%, 290px); aspect-ratio: 9 / 16; margin: 24px auto 16px; padding: 7px; border: 1px solid #465049; border-radius: 25px; background: #070908; box-shadow: 0 24px 50px rgba(0,0,0,.35); overflow: hidden; }
+.phone-frame video, #promo-placeholder { width: 100%; height: 100%; border-radius: 19px; object-fit: cover; }
+#promo-placeholder { display: grid; place-content: center; text-align: center; background: radial-gradient(circle at 60% 25%, #306143, transparent 38%), linear-gradient(155deg,#19201d,#0a0e0c); color: var(--muted); }
+#promo-placeholder span { color: var(--green); font-size: 48px; font-weight: 900; letter-spacing: -.08em; }
+#promo-placeholder p { font-size: 11px; }
+.artifact-meta { display: flex; justify-content: space-between; gap: 8px; color: var(--faint); font-size: 10px; }
+.artifact-meta code { overflow: hidden; text-overflow: ellipsis; }
+
+.checks, .receipts, .trace-list { display: grid; gap: 8px; margin-top: 22px; }
+.check, .receipt, .trace-step { border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.022); border-radius: 10px; padding: 10px 11px; display: grid; align-items: center; gap: 9px; }
+.check { grid-template-columns: 17px 1fr; }
+.check i { width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; background: rgba(78,225,132,.1); color: var(--green); font-size: 9px; font-style: normal; }
+.check.failed i { background: rgba(255,142,142,.1); color: var(--red); }
+.check span, .receipt span, .trace-step span { font-size: 11px; }
+.check small { display: block; color: var(--faint); margin-top: 3px; }
+.receipt { grid-template-columns: 27px 1fr auto; }
+.channel-icon { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 8px; background: #202622; text-transform: uppercase; font-size: 10px; font-weight: 850; }
+.receipt small, .trace-step small { color: var(--faint); font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; display: block; margin-top: 4px; }
+.receipt strong { font-size: 9px; color: var(--green); text-transform: uppercase; }
+.receipt strong.retrying { color: var(--amber); }
+.receipt strong.failed { color: var(--red); }
+.trace-step { grid-template-columns: 24px 1fr auto; }
+.trace-step b { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: var(--green); background: rgba(78,225,132,.08); font-size: 9px; }
+.trace-step time { color: var(--faint); font-size: 9px; }
+.empty { color: var(--faint); font-size: 11px; }
+
+.variant-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.variant { border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 13px; background: rgba(255,255,255,.02); }
+.variant header { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 10px; text-transform: uppercase; font-weight: 800; }
+.variant p { font-size: 11px; line-height: 1.55; color: #c8d0cb; margin: 10px 0 0; }
+.recap-panel h4 { margin: 26px 0 8px; font-size: 20px; letter-spacing: -.03em; }
+.recap-summary { color: var(--muted); font-size: 12px; line-height: 1.65; }
+.clusters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.cluster { border: 1px solid rgba(167,196,255,.15); color: var(--blue); background: rgba(167,196,255,.05); border-radius: 999px; padding: 7px 10px; font-size: 10px; }
+
+footer { color: var(--faint); display: flex; justify-content: space-between; gap: 20px; padding: 42px 2px 50px; font-size: 11px; }
+footer strong { color: var(--muted); }
+footer a { color: var(--green); text-decoration: none; }
+
+@media (max-width: 1100px) {
+  .panel { grid-column: span 6; }
+  .preview-panel { grid-row: auto; }
+  .workflow { grid-template-columns: repeat(4, 1fr); }
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .metrics article:nth-child(3) { border-right: 0; }
+  .metrics article:nth-child(n+4) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  .topbar { height: auto; min-height: 64px; padding: 13px 4vw; align-items: flex-start; }
+  .brand-divider, .brand > strong { display: none; }
+  .system-pills { flex-wrap: wrap; justify-content: flex-end; }
+  #transport-pill { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 55px; gap: 42px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .metrics article { border-top: 1px solid var(--line); }
+  .metrics article:first-child, .metrics article:nth-child(2) { border-top: 0; }
+  .metrics article:nth-child(even) { border-right: 0; }
+  .workflow { display: flex; overflow-x: auto; }
+  .workflow li { min-width: 138px; }
+  .panel, .panel.wide { grid-column: span 12; }
+  .variant-grid { grid-template-columns: 1fr; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .section-heading code { max-width: 100%; }
+  footer { flex-direction: column; }
+}
+</style>
+
+</head>
+<body>
+
+    <div class="ambient ambient-one" style=""></div>
+    <div class="ambient ambient-two" style=""></div>
+    <header class="topbar" style="">
+      <a class="brand" href="https://sigmora.org/?utm_source=creator_duty_demo&amp;utm_medium=product&amp;utm_campaign=all_things_agentic_2026">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>Sigmora</span>
+        <span class="brand-divider">/</span>
+        <strong>Creator Duty</strong>
+      </a>
+      <div class="system-pills">
+        <span class="pill"><i id="health-dot" class="online"></i><span id="health-label">Cloud service ready</span></span>
+        <span class="pill" id="transport-pill">pubsub</span>
+        <span class="pill model-pill" id="model-pill">gemini-3.7-flash</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">AUTONOMOUS LIVESTREAM OPERATIONS</p>
+          <h1>Stay live.<br><em>Creator Duty</em> handles the campaign.</h1>
+          <p class="hero-copy">
+            One event becomes a planned, rendered, validated, published, verified, and recoverable campaign—without a prompt or mid-run approval.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="primary" id="start-button"><span class="play-icon">▶</span> Start a fresh hero run</button>
+          <button class="secondary" id="replay-button">Replay same event</button>
+          <button class="secondary" id="end-button">End livestream + recap</button>
+          <p id="action-message" role="status">Ready for a synthetic, clearly labeled judge fixture.</p>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Run outcomes">
+        <article><span>Human actions</span><strong id="metric-actions">0</strong><small>after event delivery</small></article>
+        <article><span>Current duty</span><strong id="metric-stage">Closed</strong><small id="metric-outcome">post_live_recap_complete</small></article>
+        <article><span>Verified channels</span><strong id="metric-channels">4 / 4</strong><small>individual receipts</small></article>
+        <article><span>Duplicate posts</span><strong id="metric-duplicates">0</strong><small>after exact replay</small></article>
+        <article><span>Elapsed</span><strong id="metric-elapsed">30.0s</strong><small>event to completion</small></article>
+      </section>
+
+      <section class="workflow-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DURABLE DUTY</p>
+            <h2>One bounded outcome, checkpoint by checkpoint</h2>
+          </div>
+          <code id="trace-id">trace: f1f75688153101beb9b88ba30619b91e</code>
+        </div>
+        <ol class="workflow" id="workflow" aria-label="Campaign workflow">
+          <li data-stage="received" class="done"><b>01</b><span>Receive</span><small>transactional claim</small></li>
+          <li data-stage="planning" class="done"><b>02</b><span>Plan</span><small id="planning-provider">Gemini structured choice</small></li>
+          <li data-stage="producing" class="done"><b>03</b><span>Produce</span><small>vertical campaign asset</small></li>
+          <li data-stage="validating" class="done"><b>04</b><span>Validate</span><small>deterministic authority</small></li>
+          <li data-stage="publishing" class="done"><b>05</b><span>Publish</span><small>scoped sandbox tools</small></li>
+          <li data-stage="verifying" class="done"><b>06</b><span>Verify</span><small>receipts + retry</small></li>
+          <li data-stage="complete" class="done"><b>07</b><span>Complete</span><small>auditable outcome</small></li>
+        </ol>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="panel event-panel">
+          <div class="panel-title"><span class="icon-box">↯</span><div><p>OBSERVED CHANGE</p><h3>Livestream event</h3></div><span class="tag synthetic">SYNTHETIC</span></div>
+          <dl class="event-details">
+            <div><dt>Event</dt><dd id="event-id">live_evt_cloud_20260829_008</dd></div>
+            <div><dt>Creator</dt><dd id="creator-id">demo_creator</dd></div>
+            <div><dt>Stream</dt><dd id="stream-id">stream_cloud_20260829_008</dd></div>
+            <div><dt>Claim</dt><dd id="claim-status">Unique + persisted</dd></div>
+          </dl>
+          <p class="boundary-note">The event grants a narrow preauthorization: one creator, four sandbox destinations, one video, and an estimated model-budget limit.</p>
+        </article>
+
+        <article class="panel plan-panel">
+          <div class="panel-title"><span class="icon-box">✦</span><div><p>BOUNDED REASONING</p><h3>Campaign plan</h3></div><span class="tag success" id="model-evidence">gemini-3.7-flash</span></div>
+          <blockquote id="plan-hook">“Stop tab-switching while live: let an autonomous agent orchestrate cross-platform distribution safely.”</blockquote>
+          <dl class="plan-details">
+            <div><dt>Angle</dt><dd id="plan-angle">Automating multi-channel livestream promotion with deterministic AI safety</dd></div>
+            <div><dt>Moment</dt><dd id="plan-moment">18s–32s</dd></div>
+            <div><dt>Tone</dt><dd id="plan-tone">Educational</dd></div>
+            <div><dt>Model calls</dt><dd id="model-calls">3</dd></div>
+          </dl>
+        </article>
+
+        <article class="panel preview-panel">
+          <div class="panel-title"><span class="icon-box">▣</span><div><p>IMMUTABLE ASSET</p><h3>Vertical promo</h3></div><span class="tag success" id="artifact-status">IMMUTABLE</span></div>
+          <div class="phone-frame">
+            <video id="promo-video" muted="" loop="" playsinline="" controls="" preload="metadata" src="https://creator-duty-ra3flcxmjq-uc.a.run.app/api/campaigns/cmp_5dc5f550c5146bebdbc2/artifacts/art_promo_cf51f0dfb6af795044704bc2b27a7fe7"></video>
+            <div id="promo-placeholder" hidden=""><span>9:16</span><p>Rendered campaign artifact</p></div>
+          </div>
+          <div class="artifact-meta"><code id="artifact-id">artifact: art_promo_cf51f0dfb6af795044704bc2b27a7fe7</code><span id="artifact-duration">1080×1920 · 12s</span></div>
+        </article>
+
+        <article class="panel policy-panel">
+          <div class="panel-title"><span class="icon-box">✓</span><div><p>DETERMINISTIC AUTHORITY</p><h3>Release policy</h3></div><span class="tag success" id="policy-status">PASSED</span></div>
+          <div class="checks" id="policy-checks"><div class="check "><i>✓</i><span>AUTHORIZED CREATOR<small>Only demo_creator is preauthorized.</small></span></div><div class="check "><i>✓</i><span>AUTHORIZED PROFILE<small>The immutable Taskmaster demo profile must authorize this run before the event.</small></span></div><div class="check "><i>✓</i><span>EXACT CHANNEL SET<small>Every planned channel has exactly one variant.</small></span></div><div class="check "><i>✓</i><span>DESTINATION CAP<small>The demo profile permits three or four sandbox destinations.</small></span></div><div class="check "><i>✓</i><span>VERTICAL 9 16<small>Promo must be exactly 1080×1920 (9:16).</small></span></div><div class="check "><i>✓</i><span>PROMO DURATION<small>Promo must be 12–15 seconds.</small></span></div><div class="check "><i>✓</i><span>ONE GENERATED VIDEO<small>Release contains one immutable promo video.</small></span></div><div class="check "><i>✓</i><span>MODEL SPEND CAP<small>Estimated spend must be at most $5.00.</small></span></div><div class="check "><i>✓</i><span>PLATFORM COPY LIMITS<small>Copy must fit each destination's configured limit.</small></span></div><div class="check "><i>✓</i><span>ALLOWED LINKS<small>Only HTTPS links on sigmora.org are permitted.</small></span></div><div class="check "><i>✓</i><span>SUPPORTED CLAIMS<small>Unverified superlatives and guarantees are blocked.</small></span></div><div class="check "><i>✓</i><span>CHANNEL NATIVE VARIANTS<small>Each destination must receive distinct platform-native copy.</small></span></div><div class="check "><i>✓</i><span>QUIET HOURS<small>The demo profile publishes only from 05:00 through 20:59 UTC.</small></span></div></div>
+          <p class="boundary-note" id="authority-copy">Gemini proposes. Typed code decides whether any side effect is allowed.</p>
+        </article>
+
+        <article class="panel receipts-panel">
+          <div class="panel-title"><span class="icon-box">◎</span><div><p>SIDE-EFFECT EVIDENCE</p><h3>Destination receipts</h3></div><span class="tag success" id="receipt-status">4 VERIFIED</span></div>
+          <div class="receipts" id="receipts"><div class="receipt"><span class="channel-icon">x</span><span>X<small>attempt 1 · sandbox_post_01c58d283046f41e7c725ee73dd4eeb9</small></span><strong class="verified">verified</strong></div><div class="receipt"><span class="channel-icon">li</span><span>Linkedin<small>attempt 2 · sandbox_post_c318dbe2685965c68416cf97432c4efb</small></span><strong class="verified">verified</strong></div><div class="receipt"><span class="channel-icon">yo</span><span>Youtube Shorts<small>attempt 1 · sandbox_post_49952989fba335818243cb60633ffe7c</small></span><strong class="verified">verified</strong></div><div class="receipt"><span class="channel-icon">in</span><span>Instagram<small>attempt 1 · sandbox_post_fc20a566ac8c91ce9efc688298f83343</small></span><strong class="verified">verified</strong></div></div>
+        </article>
+
+        <article class="panel trace-panel">
+          <div class="panel-title"><span class="icon-box">⌁</span><div><p>ONE CORRELATED TRACE</p><h3>Agent activity</h3></div><span class="tag" id="retry-status">1 RETRY</span></div>
+          <div class="trace-list" id="trace-list"><div class="trace-step"><b>✓</b><span>prepare recap<small>step_22eecb07033c4bab38af7465 · attempt 1 · gemini-3.7-flash</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>load live source<small>step_87631d6c8735fbf746cd2c97 · attempt 1</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>duplicate guard<small>step_8c915a3bfc7e56517b77c92a · attempt 1</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>verify receipt<small>step_31b8cacb566cec419715f646 · attempt 1</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>verify receipt<small>step_31498169deae1fdf23a1a089 · attempt 1</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>verify receipt<small>step_f1afb8cfd24eac66e1694cc0 · attempt 2</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>publish release<small>step_a178403fcc7c299325a79bd2 · attempt 2</small></span><time>succeeded</time></div><div class="trace-step"><b>✓</b><span>lookup publication<small>step_4a6f49b2e966e06accd49c7e · attempt 1</small></span><time>succeeded</time></div></div>
+        </article>
+
+        <article class="panel variants-panel wide">
+          <div class="panel-title"><span class="icon-box">≋</span><div><p>PLATFORM-NATIVE COPY</p><h3>Channel variants</h3></div><span class="tag success" id="variant-count">4 VARIANTS</span></div>
+          <div class="variant-grid" id="variants"><article class="variant"><header><span>X</span><span>182 chars</span></header><p>Creators should be present with their audience, not tab-switching through operations checklists. See how Creator Duty plans bounded cross-platform livestream promotion automatically.</p></article><article class="variant"><header><span>Linkedin</span><span>263 chars</span></header><p>Live broadcasting demands full attention on your audience, not operational checklists. In this walkthrough, see how autonomous orchestration handles multi-platform campaign planning with deterministic safety controls and idempotency to keep distribution reliable.</p></article><article class="variant"><header><span>Youtube Shorts</span><span>63 chars</span></header><p>Automate livestream promotion across platforms with bounded AI.</p></article><article class="variant"><header><span>Instagram</span><span>157 chars</span></header><p>Stay focused on your audience while live. Creator Duty orchestrates multi-channel distribution, deterministic policies, and promo creation in the background.</p></article></div>
+        </article>
+
+        <article class="panel recap-panel wide">
+          <div class="panel-title"><span class="icon-box">↺</span><div><p>POST-LIVE CONTINUITY</p><h3>Recap + audience questions</h3></div><span class="tag success" id="recap-status">CAMPAIGN CLOSED</span></div>
+          <h4 id="recap-headline">Building Creator Duty Live: Post-Stream Recap and Architecture Breakdown</h4>
+          <p id="recap-summary" class="recap-summary">The livestream demonstrated Creator Duty's autonomous campaign orchestration, showing how Pub/Sub, Cloud Run, Gemini, and Firestore collaborate to generate multi-channel assets and enforce deterministic safety, idempotency, and targeted failure recovery without manual tab-switching.</p>
+          <div class="clusters" id="clusters"><span class="cluster">Safety, Idempotency, and Failure Recovery · 2</span><span class="cluster">Model Orchestration and Autonomy · 2</span><span class="cluster">Platform Capabilities and Value Proposition · 2</span></div>
+        </article>
+      </section>
+
+      <footer>
+        <p><strong>Creator Duty by Sigmora</strong> · Taskmaster entry · deterministic external-service sandbox clearly disclosed</p>
+        <a href="https://sigmora.org/?utm_source=creator_duty_demo&amp;utm_medium=product&amp;utm_campaign=all_things_agentic_2026">Explore Sigmora →</a>
+      </footer>
+    </main>
+    <script src="/app.js" defer=""></script>
+
+
+
+</body>
+</html>
